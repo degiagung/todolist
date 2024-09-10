@@ -15,12 +15,16 @@ class AuthController extends Controller
     const CODE_SUCCESS = '00';
     const CODE_FAILED = '01';
 
+    public function index(Request $request){
+        return 'not authenticated';
+    }
     public function login(Request $request)
     {
         $credentials = $request->only('username', 'password');
 
 
         if (Auth::attempt($credentials)) {
+            print_r(Auth::check());die;
             Session::put('id', Auth::user()->id);
             Session::put('email', Auth::user()->email);
             Session::put('username', Auth::user()->username);

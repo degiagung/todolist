@@ -126,7 +126,7 @@ class ApiController extends Controller
     
             $data = DB::select("
                 SELECT 
-                    ch.id as checklistid,ch.checklist_name,ch.checklist,ch.status checklist_status,ci.id as ichecklistitemid,ci.*
+                    ch.id as checklistid,ch.checklist_name,ci.id as ichecklistitemid,ci.*
                 FROM 
                     checklists ch 
                     LEFT JOIN checklistitems ci ON ch.id = ci.id_checklist
@@ -195,7 +195,7 @@ class ApiController extends Controller
     
             $data = DB::select("
                 SELECT 
-                    ch.id as checklistid,ch.checklist_name,ch.checklist,ch.status checklist_status,ci.id as ichecklistitemid,ci.*
+                    ch.id as checklistid,ch.checklist_name,ci.id as ichecklistitemid,ci.*
                 FROM 
                     checklists ch 
                     JOIN checklistitems ci ON ch.id = ci.id_checklist

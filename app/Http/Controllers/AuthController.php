@@ -24,7 +24,7 @@ class AuthController extends Controller
 
 
         if (Auth::attempt($credentials)) {
-            print_r(Auth::check());die;
+            // print_r(Auth::check());die;
             Session::put('id', Auth::user()->id);
             Session::put('email', Auth::user()->email);
             Session::put('username', Auth::user()->username);

@@ -11,7 +11,7 @@ use App\Helpers\Master;
 class ApiController extends Controller
 {
     public function checklist(Request $request){
-        
+
         $token = $request->bearerToken();
         $MasterClass    = new Master();
         if($MasterClass::BEARER === '$dgfdgkjfgkjfgkjfkj'){
@@ -46,7 +46,7 @@ class ApiController extends Controller
         // print_r($data);die;
     }
     public function createchecklist(Request $request){
-        
+        // print_r(Auth::check());die;
         DB::beginTransaction();     
         $token          = $request->bearerToken();
         $MasterClass    = new Master();
